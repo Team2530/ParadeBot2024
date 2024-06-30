@@ -186,12 +186,12 @@ public class DriveTrain extends SubsystemBase {
 
   private void updateStickValues() {
     xPercent = RobotContainer.XBOX_CONTROLLER.getLeftX();
-    ysticky = Math.max(ysticky,
-        RobotContainer.XBOX_CONTROLLER.getLeftTriggerAxis());
-    ysticky = Math.min(ysticky, 1.0f -
-        RobotContainer.XBOX_CONTROLLER.getRightTriggerAxis());
+    // ysticky = Math.max(ysticky,
+    // RobotContainer.XBOX_CONTROLLER.getLeftTriggerAxis());
+    // ysticky = Math.min(ysticky, 1.0f -
+    // RobotContainer.XBOX_CONTROLLER.getRightTriggerAxis());
 
-    yPercent = MathUtil.clamp(RobotContainer.XBOX_CONTROLLER.getLeftY() - ysticky, -1.0, 1.0);
+    yPercent = MathUtil.clamp(RobotContainer.XBOX_CONTROLLER.getLeftY(), -1.0, 1.0);
 
     zPercent = RobotContainer.XBOX_CONTROLLER.getRightX();
   }
